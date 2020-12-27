@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Android4AProject</string>
+    <string name="create_account_button_text">Create Account</string>
+    <string name="sign_in_button_text">Log in</string>
+    <string name="password_textfield">Password</string>
+    <string name="login_textfield">Login</string>
 </resources>
