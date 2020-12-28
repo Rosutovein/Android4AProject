@@ -4,4 +4,8 @@
     <string name="sign_in_button_text">Log in</string>
     <string name="password_textfield">Password</string>
     <string name="login_textfield">Login</string>
+    <string name="notification_channel_id">myCanal</string>
+    <string name="notification_channel_title">myTitle</string>
+    <string name="notification_channel_desc">This is a test canal</string>
+    <string name="welcome_notification_page">Bienvenue sur la notification :)</string>
 </resources>
