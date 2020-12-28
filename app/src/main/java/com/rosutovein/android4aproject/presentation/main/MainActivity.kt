@@ -19,7 +19,13 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.loginLiveData.observe(this, Observer {
             when(it){
                 is LoginSuccess -> {
-                    //TODO NAVIGATE
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle("Success")
+                        .setMessage("Compte connecté")
+                        .setPositiveButton("Ok") {
+                                dialog, which -> dialog.dismiss()
+                        }
+                        .show()
                 }
                     LoginError -> {
                         MaterialAlertDialogBuilder(this)
@@ -34,6 +40,17 @@ class MainActivity : AppCompatActivity() {
         })
         login_button.setOnClickListener{
             mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
+        }
+
+        create_account_button.setOnClickListener{
+            mainViewModel.onClickedCreateAccount(login_edit.text.toString().trim(), password_edit.text.toString())
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Success")
+                .setMessage("Compte connecté")
+                .setPositiveButton("Ok") {
+                        dialog, which -> dialog.dismiss()
+                }
+                .show()
         }
 
     }

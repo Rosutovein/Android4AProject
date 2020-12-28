@@ -7,6 +7,7 @@ import com.rosutovein.android4aproject.domain.entity.User
 import com.rosutovein.android4aproject.domain.useCase.CreateUserUseCase
 import com.rosutovein.android4aproject.domain.useCase.GetUserUseCase
 import kotlinx.coroutines.*
+import org.koin.ext.getScopeName
 
 class MainViewModel(
     private val createUserUseCase: CreateUserUseCase,
