@@ -18,7 +18,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="50dp"
-            app:cardBackgroundColor="@android:color/white"
+            app:cardBackgroundColor="@color/colorBackground"
             app:cardCornerRadius="8dp"
             app:cardElevation="0dp">
 
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="type"
+                    android:text="Type(s)"
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -73,7 +73,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
-                    android:text="weakness"
+                    android:text="Faiblesse(s)"
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -87,7 +87,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
-                    android:text="prev_evolution"
+                    android:text="Pré-évolution(s)"
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -101,7 +101,7 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
-                    android:text="next_evolution"
+                    android:text="Évolution(s) suivante(s)"
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
                     android:textStyle="bold"

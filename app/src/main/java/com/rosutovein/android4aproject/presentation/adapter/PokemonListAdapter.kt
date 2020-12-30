@@ -7,16 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.rosutovein.android4aproject.PokemonList
 import com.rosutovein.android4aproject.R
 import com.rosutovein.android4aproject.data.remote.Pokemon
 import com.rosutovein.android4aproject.presentation.ItemClickListener
 import com.rosutovein.android4aproject.presentation.common.Common
-import kotlinx.android.synthetic.main.pokemon_list_item.view.*
 
 class PokemonListAdapter (internal var context: Context, internal var pokemonList: List<Pokemon>) : RecyclerView.Adapter<PokemonListAdapter.MyViewHolder>(){
 
@@ -49,7 +46,7 @@ class PokemonListAdapter (internal var context: Context, internal var pokemonLis
 
         holder.setItemClickListener(object:ItemClickListener{
             override fun onClick(view: View, position: Int) {
-                //Toast.makeText(context, "Click at Pokemon: " + pokemonList[position], Toast.LENGTH_SHORT).show()
+
                 LocalBroadcastManager.getInstance(context)
                     .sendBroadcast(Intent(Common.KEY_ENABLE_HOME).putExtra("position", position))
             }

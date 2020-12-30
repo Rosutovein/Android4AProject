@@ -10,4 +10,6 @@
     <string name="welcome_notification_page">Bienvenue sur la notification :)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_title">title</string>
+    <string name="default_notification_channel_id">1</string>
 </resources>

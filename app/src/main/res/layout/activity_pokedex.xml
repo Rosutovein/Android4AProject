@@ -8,13 +8,13 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:minHeight="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorPrimaryDark"
         app:titleTextColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <fragment
-        android:name="com.rosutovein.android4aproject.PokemonList"
+        android:name="com.rosutovein.android4aproject.presentation.PokemonList"
         android:id="@+id/list_pokemon_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

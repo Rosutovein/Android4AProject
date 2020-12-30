@@ -1,6 +1,5 @@
 package com.rosutovein.android4aproject.presentation.common
 
-import com.rosutovein.android4aproject.PokemonList
 import android.graphics.Color
 import com.rosutovein.android4aproject.data.remote.Pokemon
 

@@ -1,4 +1,4 @@
-package com.rosutovein.android4aproject
+package com.rosutovein.android4aproject.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.rosutovein.android4aproject.R
 import com.rosutovein.android4aproject.presentation.adapter.PokemonListAdapter
 import com.rosutovein.android4aproject.presentation.common.Common
 import com.rosutovein.android4aproject.presentation.common.ItemOffsetDecoration
@@ -15,7 +16,6 @@ import com.rosutovein.android4aproject.presentation.retrofit.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_pokemon_list.*
 
 class PokemonList : Fragment() {
 
