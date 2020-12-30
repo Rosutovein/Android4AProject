@@ -12,7 +12,7 @@ object RetrofitClient {
     get(){
         if(ourInstance == null)
             ourInstance = Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/")
+                .baseUrl("https://raw.githubusercontent.com/Rosutovein/Android4AProject/master/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
