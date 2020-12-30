@@ -1,5 +1,6 @@
 package com.rosutovein.android4aproject.presentation.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                                 dialog, which -> dialog.dismiss()
                         }
                         .show()
+
+                    val intent = Intent(this, PokedexActivity::class.java)
+                    startActivity(intent)
                 }
                     LoginError -> {
                         MaterialAlertDialogBuilder(this)
