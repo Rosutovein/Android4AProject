@@ -37,10 +37,9 @@ https://github.com/Rosutovein/Android4AProject.git
 ### Écran Home
 * Création d'un compte utilisateur
 Il suffit d'écrire dans les champs un nom d'utilisateur et un mot de passe puis appuyer sur "CREATE ACCOUNT"
-<img src="https://github.com/Rosutovein/Android4AProject/blob/master/img_readme/SplashActivity.jpg" width="360" height="640" />
+<img src="https://github.com/Rosutovein/Android4AProject/blob/master/img_readme/MainActivity.jpg" width="360" height="640" />
 <img src="https://github.com/Rosutovein/Android4AProject/blob/master/img_readme/Success.jpg" width="360" height="640" />
-* Connexion à un compte utilisateur
-Comme précédément, il suffit d'écrire dans les champs un nom d'utilisateur et un mot de passe puis appuyer sur "LOG IN"
+* Connexion à un compte utilisateur: comme précédément, il suffit d'écrire dans les champs un nom d'utilisateur et un mot de passe puis appuyer sur "LOG IN"
 <img src="https://github.com/Rosutovein/Android4AProject/blob/master/img_readme/Error.jpg" width="360" height="640" />
 
 ### Écran du pokedex
