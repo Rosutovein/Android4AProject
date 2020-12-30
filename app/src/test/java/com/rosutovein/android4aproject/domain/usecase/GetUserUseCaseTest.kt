@@ -18,18 +18,19 @@ class GetUserUseCaseTest{
     private val classUnderTest = GetUserUseCase(userRepository)
 
     @Test
-    fun `invoke with invalid email`() {
+    fun `invoke with invalid email and invalid password`() {
         runBlocking {
             //GIVEN
             val email = ""
+            val password = ""
             //Quand tu vas appeler cette méthode, tu ne fais rien
-            coEvery{userRepository.getUser(email)} returns null
+            coEvery{userRepository.getUser(email, password)} returns null
 
             //WHEN
-            val result = classUnderTest.invoke(email)
+            val result = classUnderTest.invoke(email, password)
 
             //THEN
-            coVerify(exactly = 1) { userRepository.getUser(email) }
+            coVerify(exactly = 1) { userRepository.getUser(email, password) }
             assertEquals(result, null)
         }
     }
@@ -39,14 +40,15 @@ class GetUserUseCaseTest{
         runBlocking {
             //GIVEN
             val email = "a@a.c"
-            val expectedUser = User("a@a.c")
-            coEvery{userRepository.getUser(email)} returns expectedUser
+            val password = "a"
+            val expectedUser = User("a@a.c", "a")
+            coEvery{userRepository.getUser(email, password)} returns expectedUser
 
             //WHEN
-            val result = classUnderTest.invoke(email)
+            val result = classUnderTest.invoke(email, password)
 
             //THEN
-            coVerify(exactly = 1) { userRepository.getUser(email) }
+            coVerify(exactly = 1) { userRepository.getUser(email, password) }
             assertEquals(result, expectedUser)
         }
     }

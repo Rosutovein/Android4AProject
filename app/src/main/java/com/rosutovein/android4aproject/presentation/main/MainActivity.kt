@@ -20,21 +20,13 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.loginLiveData.observe(this, Observer {
             when(it){
                 is LoginSuccess -> {
-                    MaterialAlertDialogBuilder(this)
-                        .setTitle("Success")
-                        .setMessage("Compte connecté")
-                        .setPositiveButton("Ok") {
-                                dialog, which -> dialog.dismiss()
-                        }
-                        .show()
-
                     val intent = Intent(this, PokedexActivity::class.java)
                     startActivity(intent)
                 }
                     LoginError -> {
                         MaterialAlertDialogBuilder(this)
-                            .setTitle("Erreur")
-                            .setMessage("Compte inconnu")
+                            .setTitle("Error")
+                            .setMessage("Account Unknown")
                             .setPositiveButton("Ok") {
                                 dialog, which -> dialog.dismiss()
                             }
@@ -42,20 +34,43 @@ class MainActivity : AppCompatActivity() {
                     }
             }
         })
+
         login_button.setOnClickListener{
-            mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
+            if( (login_edit.text.toString().trim()!="" && password_edit.text.toString()!="") ){
+                mainViewModel.onClickedLogin(login_edit.text.toString().trim(), password_edit.text.toString())
+                login_edit.setText("")
+                password_edit.setText("")
+            }else{
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Error")
+                    .setMessage("Some fields are empty...")
+                    .setPositiveButton("Ok") {
+                            dialog, which -> dialog.dismiss()
+                    }
+            }
         }
 
         create_account_button.setOnClickListener{
-            mainViewModel.onClickedCreateAccount(login_edit.text.toString().trim(), password_edit.text.toString())
-            MaterialAlertDialogBuilder(this)
-                .setTitle("Success")
-                .setMessage("Compte connecté")
-                .setPositiveButton("Ok") {
-                        dialog, which -> dialog.dismiss()
-                }
-                .show()
+            if(login_edit.text.toString().trim()!="" && password_edit.text.toString()!=""){
+                mainViewModel.onClickedCreateAccount(login_edit.text.toString().trim(), password_edit.text.toString())
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Success")
+                    .setMessage("User created")
+                    .setPositiveButton("Ok") {
+                            dialog, which -> dialog.dismiss()
+                    }
+                    .show()
+                login_edit.setText("")
+                password_edit.setText("")
+            }
+            else{
+                MaterialAlertDialogBuilder(this)
+                    .setTitle("Error")
+                    .setMessage("Some fields are empty...")
+                    .setPositiveButton("Ok") {
+                            dialog, which -> dialog.dismiss()
+                    }
+            }
         }
-
     }
 }
