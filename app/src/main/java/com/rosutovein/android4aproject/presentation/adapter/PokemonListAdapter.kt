@@ -51,7 +51,7 @@ class PokemonListAdapter (internal var context: Context, internal var pokemonLis
             override fun onClick(view: View, position: Int) {
                 //Toast.makeText(context, "Click at Pokemon: " + pokemonList[position], Toast.LENGTH_SHORT).show()
                 LocalBroadcastManager.getInstance(context)
-                    .sendBroadcast(Intent(Common.KEY_NUM_EVOLUTION).putExtra("position", position))
+                    .sendBroadcast(Intent(Common.KEY_ENABLE_HOME).putExtra("position", position))
             }
         })
     }

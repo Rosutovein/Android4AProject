@@ -19,7 +19,7 @@ class PokedexActivity: AppCompatActivity() {
     //Broadcast Handle
     private val showDetail = object:BroadcastReceiver(){
         override fun onReceive(context: Context?, intent: Intent?) {
-            if(intent!!.action!!.toString() == Common.KEY_NUM_EVOLUTION){
+            if(intent!!.action!!.toString() == Common.KEY_ENABLE_HOME){
                 supportActionBar!!.setDisplayHomeAsUpEnabled(true)
                 supportActionBar!!.setDisplayShowHomeEnabled(true)
 
@@ -45,7 +45,7 @@ class PokedexActivity: AppCompatActivity() {
 
     private val showEvolution = object:BroadcastReceiver(){
         override fun onReceive(context: Context?, intent: Intent?) {
-            /*if(intent!!.action!!.toString() == Common.KEY_NUM_EVOLUTION){
+            if(intent!!.action!!.toString() == Common.KEY_NUM_EVOLUTION){
 
                 //Replace Fragment
                 val detailFragment = PokemonDetail.getInstance()
@@ -63,7 +63,7 @@ class PokedexActivity: AppCompatActivity() {
                 //Set Pokemon name for toolbar
                 val pokemon = Common.findPokemonByNum(num)
                 toolbar.title = pokemon!!.name
-            }*/
+            }
         }
 
     }
@@ -78,7 +78,7 @@ class PokedexActivity: AppCompatActivity() {
 
         //Register broadcast
         LocalBroadcastManager.getInstance(this)
-            .registerReceiver(showDetail, IntentFilter(Common.KEY_NUM_EVOLUTION))
+            .registerReceiver(showDetail, IntentFilter(Common.KEY_ENABLE_HOME))
 
         LocalBroadcastManager.getInstance(this)
             .registerReceiver(showEvolution, IntentFilter(Common.KEY_NUM_EVOLUTION))
